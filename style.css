@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #f59e0b;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: #111e2b;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+/* Efek hover (warna berubah) */
+nav a:hover {
+  color: #2563eb;
+}
+
+/* Garis animasi bawah (clean & modern) */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.grid span {
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  transition: 0.3s;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #334155;
+}
+
+
+.card-link {
+  display: block;       /* ini penting banget */
+  text-decoration: none;
+}
+
+.contact-list {
+  display: flex;
+  justify-content: center; /* tengah */
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.contact-item img {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  color: #007bff;
+}
+
+/* optional efek biar lebih hidup */
+.contact-item:hover {
+  transform: translateX(5px);
+  transition: 0.3s;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+
