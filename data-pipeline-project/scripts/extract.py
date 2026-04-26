@@ -22,7 +22,7 @@ def extract_data(path):
         logging.warning(f"Failed with detected encoding: {e}")
         logging.info("Fallback to latin-1 with replace mode")
 
-        # 3. Fallback (anti gagal total)
+        # 3. Fallback 
         df = pd.read_csv(path, encoding="latin-1", errors="replace")
 
     # 4. Basic cleaning (handle NBSP 0xa0)
