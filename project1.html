@@ -1,0 +1,113 @@
+<!-- project1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>End-to-End Data Pipeline & BI Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="project-topbar">
+  <a href="index.html" class="project-brand">Joni</a>
+  <nav>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="project-container">
+  <div class="project-header">
+    <p class="project-label">Data Engineering Project</p>
+    <h1>End-to-End Data Pipeline & BI Dashboard</h1>
+    <p>Automated Superstore sales data pipeline from raw CSV ingestion to PostgreSQL analytics and Power BI dashboard reporting.</p>
+    <div class="project-actions">
+      <a href="https://github.com/jonisy1406/PortofolioJoniSyofian/tree/main/data-pipeline-project" target="_blank" rel="noopener noreferrer" class="project-action primary">
+        <i class="fa-brands fa-github"></i> View Repository
+      </a>
+      <a href="index.html#projects" class="project-action">
+        <i class="fa-solid fa-table-cells-large"></i> All Projects
+      </a>
+    </div>
+  </div>
+
+  <div class="project-visual project-dashboard">
+    <img src="asset/data-pipeline-dashboard.png" alt="Sales performance dashboard preview">
+  </div>
+
+  <div class="project-stats">
+    <div>
+      <strong>9,994</strong>
+      <span>records processed</span>
+    </div>
+    <div>
+      <strong>PostgreSQL</strong>
+      <span>analytics database</span>
+    </div>
+    <div>
+      <strong>Power BI</strong>
+      <span>dashboard output</span>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <h3>Business Problem</h3>
+    <p>This project simulates an e-commerce reporting workflow that answers business questions around revenue trends, top revenue-generating products, regional performance, and active customers.</p>
+  </div>
+
+  <div class="project-section">
+    <h3>Pipeline Architecture</h3>
+    <p>CSV data source -> Python extract, validate, and transform scripts -> PostgreSQL table -> SQL analysis -> BI dashboard.</p>
+    <div class="project-tags">
+      <span>CSV</span>
+      <span>Python</span>
+      <span>pandas</span>
+      <span>PostgreSQL</span>
+      <span>SQL</span>
+      <span>Power BI</span>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <h3>Workflow</h3>
+    <ul class="project-list">
+      <li>Extract raw Superstore CSV data and detect file encoding before loading it into pandas.</li>
+      <li>Validate data quality by checking missing values, duplicates, and required schema columns.</li>
+      <li>Transform the dataset by converting order dates, removing duplicates, and creating a Revenue column.</li>
+      <li>Load the cleaned dataset into PostgreSQL table <strong>sales_data</strong>.</li>
+      <li>Run SQL analysis for monthly revenue, top products, revenue by region, total customers, total orders, and active customers.</li>
+      <li>Build a dashboard with KPIs, revenue trend, regional distribution, and top product performance.</li>
+    </ul>
+  </div>
+
+  <div class="project-section">
+    <h3>Key Features</h3>
+    <ul class="project-list">
+      <li>Modular Python pipeline using separate extract, validate, transform, load, and logger scripts.</li>
+      <li>Production-like logging to track execution flow, data shape, detected encoding, warnings, and load status.</li>
+      <li>Data validation rules for missing values, duplicate records, required columns, and negative revenue detection.</li>
+      <li>BI dashboard showing total revenue, total orders, total customers, monthly revenue, revenue by region, and top products.</li>
+    </ul>
+  </div>
+
+  <div class="project-section">
+    <h3>Result</h3>
+    <p>The pipeline processed 9,994 Superstore records, generated a cleaned dataset, loaded it into PostgreSQL, and produced dashboard-ready insights including revenue trend, customer count, order volume, regional revenue split, and top-performing products.</p>
+  </div>
+
+  <div class="project-section">
+    <h3>Repository</h3>
+    <p>The full source code, SQL queries, dashboard file, dataset folders, and pipeline logs are available on GitHub.</p>
+    <a href="https://github.com/jonisy1406/PortofolioJoniSyofian/tree/main/data-pipeline-project" target="_blank" rel="noopener noreferrer" class="back-btn">
+      <i class="fa-brands fa-github"></i> View on GitHub
+    </a>
+  </div>
+
+  <a href="index.html" class="back-btn">&larr; Back to Home</a>
+</div>
+
+</body>
+</html>
