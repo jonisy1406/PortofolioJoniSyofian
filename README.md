@@ -3,7 +3,7 @@
 This repository contains my personal portfolio website showcasing my experience, projects, and skills as a Data Engineer.
 
 ## 🌐 Live Website
-🔗 https://jonisy1406.github.io/PortofolioJoniSyofian/
+🔗 https://portofoliojonisyofian.com/
 
 ---
 
