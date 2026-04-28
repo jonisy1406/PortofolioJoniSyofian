@@ -114,6 +114,27 @@ nav a:hover::after {
   width:100%;
 }
 
+.menu-toggle {
+  display:none;
+  width:42px;
+  height:42px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:rgba(255,255,255,0.04);
+  color:var(--text);
+  cursor:pointer;
+  font-size:18px;
+  transition:color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color:var(--accent);
+  border-color:rgba(255,77,77,0.36);
+  background:rgba(255,255,255,0.07);
+}
+
 /* ================= HERO ================= */
 .hero {
   display:grid;
@@ -1166,12 +1187,18 @@ footer {
 
   header {
     padding:16px 22px;
-    align-items:flex-start;
-    flex-direction:column;
+    align-items:center;
+    flex-direction:row;
+    gap:16px;
   }
 
   header.scrolled {
     padding:12px 22px;
+  }
+
+  .menu-toggle {
+    display:inline-flex;
+    margin-left:auto;
   }
 
   .project-topbar {
@@ -1180,15 +1207,45 @@ footer {
     align-items:center;
   }
 
-  nav {
-    width:100%;
-    gap:16px;
-    overflow-x:auto;
-    padding-bottom:4px;
+  header:not(.project-topbar) nav {
+    position:absolute;
+    top:calc(100% + 8px);
+    left:22px;
+    right:22px;
+    display:grid;
+    gap:4px;
+    padding:12px;
+    overflow:visible;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:rgba(9,11,16,0.96);
+    box-shadow:var(--shadow);
+    transform:translateY(-8px);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   }
 
-  nav a {
-    white-space:nowrap;
+  header:not(.project-topbar).nav-open nav {
+    transform:translateY(0);
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+
+  header:not(.project-topbar) nav a {
+    padding:12px;
+    border-radius:8px;
+    white-space:normal;
+  }
+
+  header:not(.project-topbar) nav a:hover {
+    background:rgba(255,255,255,0.05);
+  }
+
+  header:not(.project-topbar) nav a::after {
+    display:none;
   }
 
   .project-topbar nav {
