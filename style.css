@@ -462,6 +462,10 @@ nav a:hover::after {
   font-weight:700;
 }
 
+.about-cv-btn {
+  margin-top:2px;
+}
+
 .tools {
   margin-top:22px;
 }
