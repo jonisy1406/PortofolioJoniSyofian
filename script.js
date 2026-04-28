@@ -52,4 +52,10 @@ siteNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
 });
+document.addEventListener("click", (event) => {
+  if (!header.contains(event.target)) closeMenu();
+});
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 900) closeMenu();
+});
 updateHeader();

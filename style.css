@@ -1207,13 +1207,15 @@ footer {
     align-items:center;
   }
 
-  header:not(.project-topbar) nav {
+  .site-header nav {
     position:absolute;
-    top:calc(100% + 8px);
-    left:22px;
+    top:calc(100% + 10px);
     right:22px;
-    display:grid;
-    gap:4px;
+    left:auto;
+    width:min(240px, calc(100vw - 44px));
+    display:flex;
+    flex-direction:column;
+    gap:6px;
     padding:12px;
     overflow:visible;
     border:1px solid var(--line);
@@ -1227,24 +1229,24 @@ footer {
     transition:opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   }
 
-  header:not(.project-topbar).nav-open nav {
+  .site-header.nav-open nav {
     transform:translateY(0);
     opacity:1;
     visibility:visible;
     pointer-events:auto;
   }
 
-  header:not(.project-topbar) nav a {
+  .site-header nav a {
     padding:12px;
     border-radius:8px;
     white-space:normal;
   }
 
-  header:not(.project-topbar) nav a:hover {
+  .site-header nav a:hover {
     background:rgba(255,255,255,0.05);
   }
 
-  header:not(.project-topbar) nav a::after {
+  .site-header nav a::after {
     display:none;
   }
 
