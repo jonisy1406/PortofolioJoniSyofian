@@ -13,7 +13,7 @@ The pipeline includes:
 
 ---
 
-## 🎯 Business Problem
+## 🎯 Key Objectives
 Simulate an e-commerce business scenario to answer key questions:
 - What is the total revenue over time?
 - Which products generate the most revenue?
