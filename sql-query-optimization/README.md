@@ -1,12 +1,14 @@
-# SQL Query Optimizer AI
+# SQL Query Optimization Assistant
 
-SQL Query Optimizer AI is a static web application for formatting, reviewing, and optimizing SQL queries directly in the browser.
+SQL Query Optimization Assistant is a static web application for formatting, reviewing, and optimizing SQL queries directly in the browser.
+
+The optimizer is rule-based. It uses Python heuristics to detect common SQL performance risks and suggest safe rewrites where the pattern is clear enough.
 
 The project is designed for cases where the user only provides raw SQL text. The application does not require table schemas, indexes, partition keys, table size, data statistics, or execution plans.
 
 ## Features
 
-- SQL optimizer powered by Python in the browser.
+- Rule-based SQL optimizer powered by Python in the browser.
 - SQL formatter for turning raw SQL into a cleaner, more readable structure.
 - Metadata-blind SQL analysis for common performance risks.
 - Suggested query rewrites when the pattern is safe enough to rewrite.
