@@ -1,89 +1,92 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Format SQL - SQL Query Optimization Assistant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-  </head>
-  <body class="dark" data-page="formatter" data-root-prefix="../">
-    <header class="project-topbar">
-      <a href="../../index.html" class="project-brand">Joni</a>
-      <nav>
-        <a href="../../index.html#projects">Projects</a>
-        <a href="../../index.html#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main class="app-shell single-tool-shell">
-      <section class="workspace">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow" data-i18n="formatter.eyebrow">Python SQL formatter</p>
-            <h1 data-i18n="formatter.title">Format SQL</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Format SQL - SQL Query Optimization Assistant</title>
+  <link rel="icon" type="image/svg+xml" href="../../asset/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body class="dark" data-page="formatter" data-root-prefix="../">
+  <header class="project-topbar">
+    <a href="../../index.html" class="project-brand">Joni</a>
+    <nav>
+      <a href="../../index.html#projects">Projects</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="app-shell single-tool-shell">
+    <section class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" data-i18n="formatter.eyebrow">Python SQL formatter</p>
+          <h1 data-i18n="formatter.title">Format SQL</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="language-switch" aria-label="Language selector">
+            <button class="language-button" type="button" data-language="id">ID</button>
+            <button class="language-button" type="button" data-language="en">EN</button>
           </div>
-          <div class="topbar-actions">
-            <div class="language-switch" aria-label="Language selector">
-              <button class="language-button" type="button" data-language="id">ID</button>
-              <button class="language-button" type="button" data-language="en">EN</button>
-            </div>
-            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Ganti tema" title="Ganti tema">
-              <span class="theme-icon" aria-hidden="true"></span>
-            </button>
-            <a class="ghost-button" href="../index.html" data-i18n="nav.home">Home</a>
-            <a class="ghost-button" href="optimize.html" data-i18n="nav.optimize">Optimize SQL</a>
-            <button class="ghost-button" id="loadSample" type="button" data-i18n="action.sample">Contoh Query</button>
-          </div>
-        </header>
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Ganti tema"
+            title="Ganti tema">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+          <a class="ghost-button" href="../index.html" data-i18n="nav.home">Home</a>
+          <a class="ghost-button" href="optimize.html" data-i18n="nav.optimize">Optimize SQL</a>
+          <button class="ghost-button" id="loadSample" type="button" data-i18n="action.sample">Contoh Query</button>
+        </div>
+      </header>
 
-        <section class="formatter-grid" aria-label="SQL formatter">
-          <div class="panel input-panel">
-            <div class="panel-head">
-              <div>
-                <h2 data-i18n="common.inputSql">Input SQL</h2>
-                <p data-i18n="formatter.inputCopy">Tempel query mentah yang ingin dirapikan.</p>
-              </div>
-              <span class="status-pill" id="analysisState" data-i18n="state.loadingPython">Memuat Python</span>
+      <section class="formatter-grid" aria-label="SQL formatter">
+        <div class="panel input-panel">
+          <div class="panel-head">
+            <div>
+              <h2 data-i18n="common.inputSql">Input SQL</h2>
+              <p data-i18n="formatter.inputCopy">Tempel query mentah yang ingin dirapikan.</p>
             </div>
-
-            <textarea
-              id="sqlInput"
-              spellcheck="false"
-              aria-label="SQL input"
-              data-i18n-placeholder="formatter.placeholder"
-              placeholder="select o.id,o.created_at,c.email from orders o join customers c on o.customer_id=c.id where o.status='paid' order by o.created_at desc limit 100;"
-            ></textarea>
-
-            <div class="editor-actions">
-              <button class="primary-button" id="formatButton" type="button" data-i18n="action.format">Format SQL</button>
-              <button class="secondary-button" id="clearButton" type="button" data-i18n="action.clear">Bersihkan</button>
-            </div>
+            <span class="status-pill" id="analysisState" data-i18n="state.loadingPython">Memuat Python</span>
           </div>
 
-          <section class="results-panel">
-            <div class="result-stack">
-              <section class="result-section">
-                <div class="output-head">
-                  <div>
-                    <h2 data-i18n="formatter.resultTitle">SQL formatted</h2>
-                    <p data-i18n="formatter.resultCopy">Output hanya merapikan struktur query tanpa mengubah logika.</p>
-                  </div>
-                  <button class="ghost-button" type="button" data-copy="formattedSql" data-i18n="action.copy">Salin</button>
+          <textarea id="sqlInput" spellcheck="false" aria-label="SQL input"
+            data-i18n-placeholder="formatter.placeholder"
+            placeholder="select o.id,o.created_at,c.email from orders o join customers c on o.customer_id=c.id where o.status='paid' order by o.created_at desc limit 100;"></textarea>
+
+          <div class="editor-actions">
+            <button class="primary-button" id="formatButton" type="button" data-i18n="action.format">Format SQL</button>
+            <button class="secondary-button" id="clearButton" type="button" data-i18n="action.clear">Bersihkan</button>
+          </div>
+        </div>
+
+        <section class="results-panel">
+          <div class="result-stack">
+            <section class="result-section">
+              <div class="output-head">
+                <div>
+                  <h2 data-i18n="formatter.resultTitle">SQL formatted</h2>
+                  <p data-i18n="formatter.resultCopy">Output hanya merapikan struktur query tanpa mengubah logika.</p>
                 </div>
-                <pre class="code-block"><code id="formattedSql" data-i18n="formatter.emptyFormatted">Belum ada hasil. Masukkan SQL lalu klik Format SQL.</code></pre>
-              </section>
-            </div>
-          </section>
+                <button class="ghost-button" type="button" data-copy="formattedSql"
+                  data-i18n="action.copy">Salin</button>
+              </div>
+              <pre
+                class="code-block"><code id="formattedSql" data-i18n="formatter.emptyFormatted">Belum ada hasil. Masukkan SQL lalu klik Format SQL.</code></pre>
+            </section>
+          </div>
         </section>
       </section>
-    </main>
+    </section>
+  </main>
 
-    <script src="../assets/js/i18n.js"></script>
-    <script src="../assets/js/theme.js"></script>
-    <script src="../assets/js/fallback.js"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
-    <script src="../assets/js/pyodide-loader.js"></script>
-  </body>
+  <script src="../assets/js/i18n.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/fallback.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+  <script src="../assets/js/pyodide-loader.js"></script>
+</body>
+
 </html>

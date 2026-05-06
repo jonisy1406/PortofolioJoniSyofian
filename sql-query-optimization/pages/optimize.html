@@ -1,178 +1,188 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Optimize SQL - SQL Query Optimization Assistant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-  </head>
-  <body class="dark" data-page="optimizer" data-root-prefix="../">
-    <header class="project-topbar">
-      <a href="../../index.html" class="project-brand">Joni</a>
-      <nav>
-        <a href="../../index.html#projects">Projects</a>
-        <a href="../../index.html#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main class="app-shell">
-      <section class="workspace">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow" data-i18n="optimizer.eyebrow">Python metadata-blind SQL optimizer</p>
-            <h1 data-i18n="optimizer.title">Optimize SQL</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimize SQL - SQL Query Optimization Assistant</title>
+  <link rel="icon" type="image/svg+xml" href="../../asset/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body class="dark" data-page="optimizer" data-root-prefix="../">
+  <header class="project-topbar">
+    <a href="../../index.html" class="project-brand">Joni</a>
+    <nav>
+      <a href="../../index.html#projects">Projects</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <section class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" data-i18n="optimizer.eyebrow">Python metadata-blind SQL optimizer</p>
+          <h1 data-i18n="optimizer.title">Optimize SQL</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="language-switch" aria-label="Language selector">
+            <button class="language-button" type="button" data-language="id">ID</button>
+            <button class="language-button" type="button" data-language="en">EN</button>
           </div>
-          <div class="topbar-actions">
-            <div class="language-switch" aria-label="Language selector">
-              <button class="language-button" type="button" data-language="id">ID</button>
-              <button class="language-button" type="button" data-language="en">EN</button>
-            </div>
-            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Ganti tema" title="Ganti tema">
-              <span class="theme-icon" aria-hidden="true"></span>
-            </button>
-            <a class="ghost-button" href="../index.html" data-i18n="nav.home">Home</a>
-            <a class="ghost-button" href="format.html" data-i18n="nav.format">Format SQL</a>
-            <button class="ghost-button" id="loadSample" type="button" data-i18n="action.sample">Contoh Query</button>
-          </div>
-        </header>
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Ganti tema"
+            title="Ganti tema">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+          <a class="ghost-button" href="../index.html" data-i18n="nav.home">Home</a>
+          <a class="ghost-button" href="format.html" data-i18n="nav.format">Format SQL</a>
+          <button class="ghost-button" id="loadSample" type="button" data-i18n="action.sample">Contoh Query</button>
+        </div>
+      </header>
 
-        <section class="editor-grid" aria-label="Editor SQL optimizer" data-i18n-aria="optimizer.editorAria">
-          <div class="panel input-panel">
-            <div class="panel-head">
-              <div>
-                <h2 data-i18n="common.inputSql">Input SQL</h2>
-                <p data-i18n="optimizer.inputCopy">Tempel query yang ingin dianalisis dan dioptimisasi.</p>
-              </div>
-              <select id="dialect" aria-label="Pilih dialek SQL" data-i18n-aria="common.dialectAria">
-                <option value="generic">Generic SQL</option>
-                <option value="postgresql">PostgreSQL</option>
-                <option value="mysql">MySQL</option>
-                <option value="sqlserver">SQL Server</option>
-                <option value="bigquery">BigQuery</option>
-                <option value="spark">Spark SQL</option>
-              </select>
+      <section class="editor-grid" aria-label="Editor SQL optimizer" data-i18n-aria="optimizer.editorAria">
+        <div class="panel input-panel">
+          <div class="panel-head">
+            <div>
+              <h2 data-i18n="common.inputSql">Input SQL</h2>
+              <p data-i18n="optimizer.inputCopy">Tempel query yang ingin dianalisis dan dioptimisasi.</p>
             </div>
-
-            <textarea
-              id="sqlInput"
-              spellcheck="false"
-              aria-label="SQL input"
-              data-i18n-placeholder="optimizer.placeholder"
-              placeholder="SELECT * FROM orders o JOIN customers c ON o.customer_id = c.id WHERE DATE(o.created_at) = '2026-05-01' ORDER BY o.created_at DESC LIMIT 100;"
-            ></textarea>
-
-            <div class="editor-actions">
-              <button class="primary-button" id="optimizeButton" type="button" data-i18n="action.optimize">Optimisasi Query</button>
-              <button class="secondary-button" id="clearButton" type="button" data-i18n="action.clear">Bersihkan</button>
-            </div>
+            <select id="dialect" aria-label="Pilih dialek SQL" data-i18n-aria="common.dialectAria">
+              <option value="generic">Generic SQL</option>
+              <option value="postgresql">PostgreSQL</option>
+              <option value="mysql">MySQL</option>
+              <option value="sqlserver">SQL Server</option>
+              <option value="bigquery">BigQuery</option>
+              <option value="spark">Spark SQL</option>
+            </select>
           </div>
 
-          <aside class="panel insight-panel" aria-label="Ringkasan analisis" data-i18n-aria="optimizer.summaryAria">
-            <div class="panel-head compact">
-              <h2 data-i18n="optimizer.summaryTitle">Ringkasan Analisis</h2>
-              <span class="status-pill" id="analysisState" data-i18n="state.loadingPython">Memuat Python</span>
-            </div>
-            <div class="score-ring" aria-label="Skor kualitas query" data-i18n-aria="optimizer.scoreAria">
-              <svg viewBox="0 0 140 140" role="img" aria-labelledby="scoreTitle">
-                <title id="scoreTitle" data-i18n="optimizer.scoreTitle">Skor kualitas query</title>
-                <circle class="ring-bg" cx="70" cy="70" r="58"></circle>
-                <circle class="ring-value" id="scoreRing" cx="70" cy="70" r="58"></circle>
-              </svg>
-              <div class="score-copy">
-                <strong id="scoreValue">0</strong>
-                <span>/100</span>
-              </div>
-            </div>
-            <div class="metric-list">
-              <div>
-                <span data-i18n="optimizer.scanRisk">Risiko scan</span>
-                <strong id="scanRisk">-</strong>
-              </div>
-              <div>
-                <span data-i18n="optimizer.rewriteChance">Peluang rewrite</span>
-                <strong id="rewriteCount">0</strong>
-              </div>
-              <div>
-                <span data-i18n="optimizer.confidence">Keyakinan</span>
-                <strong id="confidence">-</strong>
-              </div>
-            </div>
-            <p class="note" data-i18n="optimizer.note">
-              Analisis ini tidak memakai metadata tabel. Saran index atau partition hanya berupa kandidat yang perlu divalidasi
-              dengan <code>EXPLAIN</code>, statistik, dan workload nyata.
-            </p>
-          </aside>
-        </section>
+          <textarea id="sqlInput" spellcheck="false" aria-label="SQL input"
+            data-i18n-placeholder="optimizer.placeholder"
+            placeholder="SELECT * FROM orders o JOIN customers c ON o.customer_id = c.id WHERE DATE(o.created_at) = '2026-05-01' ORDER BY o.created_at DESC LIMIT 100;"></textarea>
 
-        <section class="results-panel">
-          <div class="result-stack">
-            <section class="result-section">
-              <div class="output-head">
-                <div>
-                  <h2 data-i18n="optimizer.resultTitle">Query hasil optimisasi yang disarankan</h2>
-                  <p data-i18n="optimizer.resultCopy">Rewrite aman hanya diterapkan jika polanya cukup jelas.</p>
-                </div>
-                <button class="ghost-button" type="button" data-copy="optimizedSql" data-i18n="action.copy">Salin</button>
-              </div>
-              <pre class="code-block"><code id="optimizedSql" data-i18n="optimizer.emptyOptimized">Belum ada hasil. Masukkan SQL lalu jalankan optimisasi.</code></pre>
-            </section>
-
-            <section class="result-section explanation-section">
-              <div class="output-head">
-                <div>
-                  <h2 data-i18n="optimizer.explanationTitle">Penjelasan optimisasi</h2>
-                  <p data-i18n="optimizer.explanationCopy">Alasan dan prioritas perbaikan berdasarkan pola query, bukan metadata fisik tabel.</p>
-                </div>
-                <button class="ghost-button" type="button" data-copy="reviewText" data-i18n="action.copy">Salin</button>
-              </div>
-              <div class="review-list" id="reviewList">
-                <article class="empty-state">
-                  <strong data-i18n="optimizer.emptyReviewTitle">Belum ada review.</strong>
-                  <span data-i18n="optimizer.emptyReviewCopy">Analyzer akan menandai pola seperti <code>SELECT *</code>, fungsi di kolom filter, <code>NOT IN</code>, dan pagination offset.</span>
-                </article>
-              </div>
-              <textarea id="reviewText" class="sr-only" tabindex="-1" aria-hidden="true"></textarea>
-            </section>
+          <div class="editor-actions">
+            <button class="primary-button" id="optimizeButton" type="button" data-i18n="action.optimize">Optimisasi
+              Query</button>
+            <button class="secondary-button" id="clearButton" type="button" data-i18n="action.clear">Bersihkan</button>
           </div>
-        </section>
+        </div>
+
+        <aside class="panel insight-panel" aria-label="Ringkasan analisis" data-i18n-aria="optimizer.summaryAria">
+          <div class="panel-head compact">
+            <h2 data-i18n="optimizer.summaryTitle">Ringkasan Analisis</h2>
+            <span class="status-pill" id="analysisState" data-i18n="state.loadingPython">Memuat Python</span>
+          </div>
+          <div class="score-ring" aria-label="Skor kualitas query" data-i18n-aria="optimizer.scoreAria">
+            <svg viewBox="0 0 140 140" role="img" aria-labelledby="scoreTitle">
+              <title id="scoreTitle" data-i18n="optimizer.scoreTitle">Skor kualitas query</title>
+              <circle class="ring-bg" cx="70" cy="70" r="58"></circle>
+              <circle class="ring-value" id="scoreRing" cx="70" cy="70" r="58"></circle>
+            </svg>
+            <div class="score-copy">
+              <strong id="scoreValue">0</strong>
+              <span>/100</span>
+            </div>
+          </div>
+          <div class="metric-list">
+            <div>
+              <span data-i18n="optimizer.scanRisk">Risiko scan</span>
+              <strong id="scanRisk">-</strong>
+            </div>
+            <div>
+              <span data-i18n="optimizer.rewriteChance">Peluang rewrite</span>
+              <strong id="rewriteCount">0</strong>
+            </div>
+            <div>
+              <span data-i18n="optimizer.confidence">Keyakinan</span>
+              <strong id="confidence">-</strong>
+            </div>
+          </div>
+          <p class="note" data-i18n="optimizer.note">
+            Analisis ini tidak memakai metadata tabel. Saran index atau partition hanya berupa kandidat yang perlu
+            divalidasi
+            dengan <code>EXPLAIN</code>, statistik, dan workload nyata.
+          </p>
+        </aside>
       </section>
 
-      <section class="knowledge-panel" aria-label="Prinsip optimisasi SQL" data-i18n-aria="optimizer.playbookAria">
-        <div class="knowledge-head">
-          <p class="eyebrow">Optimization playbook</p>
-          <h2 data-i18n="optimizer.playbookTitle">Yang bisa dianalisis tanpa metadata</h2>
-        </div>
-        <div class="principle-list">
-          <article>
-            <span class="principle-icon">01</span>
-            <h3>SARGable predicates</h3>
-            <p data-i18n="playbook.sargable">Hindari fungsi atau cast di sisi kolom filter. Gunakan range eksplisit agar optimizer punya peluang memakai akses terarah.</p>
-          </article>
-          <article>
-            <span class="principle-icon">02</span>
-            <h3 data-i18n="playbook.joinTitle">Join lebih kecil</h3>
-            <p data-i18n="playbook.joinCopy">Filter baris lebih awal, pastikan join punya kondisi, dan agregasi detail sebelum join ketika hasil akhirnya memang agregat.</p>
-          </article>
-          <article>
-            <span class="principle-icon">03</span>
-            <h3 data-i18n="playbook.ioTitle">I/O hemat</h3>
-            <p data-i18n="playbook.ioCopy">Pilih kolom yang dibutuhkan, batasi sorting global, dan hindari dedup mahal seperti <code>DISTINCT</code> atau <code>UNION</code> jika tidak perlu.</p>
-          </article>
-          <article>
-            <span class="principle-icon">04</span>
-            <h3 data-i18n="playbook.validateTitle">Validasi eksekusi</h3>
-            <p data-i18n="playbook.validateCopy">Gunakan <code>EXPLAIN ANALYZE</code>, runtime, rows scanned, spill, dan shuffle metrics sebelum menganggap query sudah optimal.</p>
-          </article>
+      <section class="results-panel">
+        <div class="result-stack">
+          <section class="result-section">
+            <div class="output-head">
+              <div>
+                <h2 data-i18n="optimizer.resultTitle">Query hasil optimisasi yang disarankan</h2>
+                <p data-i18n="optimizer.resultCopy">Rewrite aman hanya diterapkan jika polanya cukup jelas.</p>
+              </div>
+              <button class="ghost-button" type="button" data-copy="optimizedSql" data-i18n="action.copy">Salin</button>
+            </div>
+            <pre
+              class="code-block"><code id="optimizedSql" data-i18n="optimizer.emptyOptimized">Belum ada hasil. Masukkan SQL lalu jalankan optimisasi.</code></pre>
+          </section>
+
+          <section class="result-section explanation-section">
+            <div class="output-head">
+              <div>
+                <h2 data-i18n="optimizer.explanationTitle">Penjelasan optimisasi</h2>
+                <p data-i18n="optimizer.explanationCopy">Alasan dan prioritas perbaikan berdasarkan pola query, bukan
+                  metadata fisik tabel.</p>
+              </div>
+              <button class="ghost-button" type="button" data-copy="reviewText" data-i18n="action.copy">Salin</button>
+            </div>
+            <div class="review-list" id="reviewList">
+              <article class="empty-state">
+                <strong data-i18n="optimizer.emptyReviewTitle">Belum ada review.</strong>
+                <span data-i18n="optimizer.emptyReviewCopy">Analyzer akan menandai pola seperti <code>SELECT *</code>,
+                  fungsi di kolom filter, <code>NOT IN</code>, dan pagination offset.</span>
+              </article>
+            </div>
+            <textarea id="reviewText" class="sr-only" tabindex="-1" aria-hidden="true"></textarea>
+          </section>
         </div>
       </section>
-    </main>
+    </section>
 
-    <script src="../assets/js/i18n.js"></script>
-    <script src="../assets/js/theme.js"></script>
-    <script src="../assets/js/fallback.js"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
-    <script src="../assets/js/pyodide-loader.js"></script>
-  </body>
+    <section class="knowledge-panel" aria-label="Prinsip optimisasi SQL" data-i18n-aria="optimizer.playbookAria">
+      <div class="knowledge-head">
+        <p class="eyebrow">Optimization playbook</p>
+        <h2 data-i18n="optimizer.playbookTitle">Yang bisa dianalisis tanpa metadata</h2>
+      </div>
+      <div class="principle-list">
+        <article>
+          <span class="principle-icon">01</span>
+          <h3>SARGable predicates</h3>
+          <p data-i18n="playbook.sargable">Hindari fungsi atau cast di sisi kolom filter. Gunakan range eksplisit agar
+            optimizer punya peluang memakai akses terarah.</p>
+        </article>
+        <article>
+          <span class="principle-icon">02</span>
+          <h3 data-i18n="playbook.joinTitle">Join lebih kecil</h3>
+          <p data-i18n="playbook.joinCopy">Filter baris lebih awal, pastikan join punya kondisi, dan agregasi detail
+            sebelum join ketika hasil akhirnya memang agregat.</p>
+        </article>
+        <article>
+          <span class="principle-icon">03</span>
+          <h3 data-i18n="playbook.ioTitle">I/O hemat</h3>
+          <p data-i18n="playbook.ioCopy">Pilih kolom yang dibutuhkan, batasi sorting global, dan hindari dedup mahal
+            seperti <code>DISTINCT</code> atau <code>UNION</code> jika tidak perlu.</p>
+        </article>
+        <article>
+          <span class="principle-icon">04</span>
+          <h3 data-i18n="playbook.validateTitle">Validasi eksekusi</h3>
+          <p data-i18n="playbook.validateCopy">Gunakan <code>EXPLAIN ANALYZE</code>, runtime, rows scanned, spill, dan
+            shuffle metrics sebelum menganggap query sudah optimal.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/i18n.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/fallback.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+  <script src="../assets/js/pyodide-loader.js"></script>
+</body>
+
 </html>
