@@ -188,19 +188,34 @@ body:not(.dark) .project-topbar {
 .project-topbar nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
 }
 
 .project-topbar nav a {
   color: var(--muted);
   font-size: 14px;
-  font-weight: 600;
   text-decoration: none;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+.project-topbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.3s ease;
 }
 
 .project-topbar nav a:hover {
   color: var(--text);
+}
+
+.project-topbar nav a:hover::after {
+  width: 100%;
 }
 
 .landing-toolbar {
