@@ -1,75 +1,83 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SQL Query Optimization Assistant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body class="dark">
-    <header class="project-topbar">
-      <a href="../index.html" class="project-brand">Joni</a>
-      <nav>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main class="landing-shell">
-      <div class="landing-toolbar">
-        <div class="language-switch" aria-label="Language selector">
-          <button class="language-button" type="button" data-language="id">ID</button>
-          <button class="language-button" type="button" data-language="en">EN</button>
-        </div>
-        <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Ganti tema" title="Ganti tema">
-          <span class="theme-icon" aria-hidden="true"></span>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Query Optimization Assistant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="dark">
+  <header class="project-topbar">
+    <a href="../index.html" class="project-brand">Joni</a>
+    <nav>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="landing-shell">
+    <div class="landing-toolbar">
+      <div class="language-switch" aria-label="Language selector">
+        <button class="language-button" type="button" data-language="id">ID</button>
+        <button class="language-button" type="button" data-language="en">EN</button>
       </div>
+      <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Ganti tema"
+        title="Ganti tema">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </div>
 
-      <section class="hero-panel">
-        <p class="eyebrow" data-i18n="landing.eyebrow">Asisten SQL rule-based</p>
-        <h1>SQL Query Optimization Assistant</h1>
-        <p class="hero-copy" data-i18n="landing.copy">
-          Pilih workflow yang dibutuhkan: optimisasi query dengan penjelasan performa atau format SQL agar query lebih mudah dibaca.
+    <section class="hero-panel">
+      <p class="eyebrow" data-i18n="landing.eyebrow">Asisten SQL rule-based</p>
+      <h1>SQL Query Optimization Assistant</h1>
+      <p class="hero-copy" data-i18n="landing.copy">
+        Pilih workflow yang dibutuhkan: optimisasi query dengan penjelasan performa atau format SQL agar query lebih
+        mudah dibaca.
+      </p>
+
+      <div class="feature-grid" aria-label="Pilih fitur" data-i18n-aria="landing.featureAria">
+        <a class="feature-card" href="pages/optimize.html">
+          <span class="feature-index">01</span>
+          <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+          <h2 data-i18n="landing.optimizeTitle">Optimize SQL</h2>
+          <p data-i18n="landing.optimizeCopy">
+            Analisis pola query, tampilkan rewrite yang disarankan, dan jelaskan risiko performa tanpa mengasumsikan
+            index atau partition key.
+          </p>
+          <span class="feature-link" data-i18n="landing.openOptimizer">Buka Optimizer</span>
+        </a>
+
+        <a class="feature-card" href="pages/format.html">
+          <span class="feature-index">02</span>
+          <i class="fa-solid fa-align-left" aria-hidden="true"></i>
+          <h2 data-i18n="landing.formatTitle">Format SQL</h2>
+          <p data-i18n="landing.formatCopy">
+            Rapikan query mentah menjadi struktur SQL yang konsisten, mudah discan, dan nyaman dipakai untuk review.
+          </p>
+          <span class="feature-link" data-i18n="landing.openFormatter">Buka Formatter</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="landing-notes" aria-label="Catatan aplikasi" data-i18n-aria="landing.notesAria">
+      <article>
+        <h2 data-i18n="landing.pythonTitle">Berjalan dengan Python</h2>
+        <p data-i18n="landing.pythonCopy">Logika utama ditulis dalam Python dan dijalankan di browser memakai Pyodide.</p>
         </p>
+      </article>
+      <article>
+        <h2 data-i18n="landing.metadataTitle">Metadata-blind</h2>
+        <p data-i18n="landing.metadataCopy">Aplikasi tidak mengetahui index, partition, ukuran tabel, statistik data,
+          atau execution plan. Semua saran perlu divalidasi dengan database target.</p>
+      </article>
+    </section>
+  </main>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/theme.js"></script>
+</body>
 
-        <div class="feature-grid" aria-label="Pilih fitur" data-i18n-aria="landing.featureAria">
-          <a class="feature-card" href="pages/optimize.html">
-            <span class="feature-index">01</span>
-            <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
-            <h2 data-i18n="landing.optimizeTitle">Optimize SQL</h2>
-            <p data-i18n="landing.optimizeCopy">
-              Analisis pola query, tampilkan rewrite yang disarankan, dan jelaskan risiko performa tanpa mengasumsikan index atau partition key.
-            </p>
-            <span class="feature-link" data-i18n="landing.openOptimizer">Buka Optimizer</span>
-          </a>
-
-          <a class="feature-card" href="pages/format.html">
-            <span class="feature-index">02</span>
-            <i class="fa-solid fa-align-left" aria-hidden="true"></i>
-            <h2 data-i18n="landing.formatTitle">Format SQL</h2>
-            <p data-i18n="landing.formatCopy">
-              Rapikan query mentah menjadi struktur SQL yang konsisten, mudah discan, dan nyaman dipakai untuk review.
-            </p>
-            <span class="feature-link" data-i18n="landing.openFormatter">Buka Formatter</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="landing-notes" aria-label="Catatan aplikasi" data-i18n-aria="landing.notesAria">
-        <article>
-          <h2 data-i18n="landing.pythonTitle">Berjalan dengan Python</h2>
-          <p data-i18n="landing.pythonCopy">Logika utama ada di <code>app.py</code> dan berjalan di browser memakai Pyodide, sehingga tetap bisa dideploy ke GitHub Pages.</p>
-        </article>
-        <article>
-          <h2 data-i18n="landing.metadataTitle">Metadata-blind</h2>
-          <p data-i18n="landing.metadataCopy">Aplikasi tidak mengetahui index, partition, ukuran tabel, statistik data, atau execution plan. Semua saran perlu divalidasi dengan database target.</p>
-        </article>
-      </section>
-    </main>
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/theme.js"></script>
-  </body>
 </html>
