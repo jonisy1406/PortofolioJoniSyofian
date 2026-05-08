@@ -1,6 +1,7 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,203 +15,207 @@
 
 <body>
 
-<header class="site-header">
-  <h2>Joni</h2>
-  <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-nav" aria-expanded="false">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-  <nav id="site-nav">
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <h2>Joni</h2>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-nav"
+      aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav id="site-nav">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero reveal">
-  <div class="hero-text">
-    <p>Hello, I'm</p>
-    <h1>Joni <span>Syofian</span></h1>
-    <h3>Data Engineer</h3>
-    <p>Building reliable data pipelines, analytics workflows, and business dashboards.</p>
-    <div class="hero-actions">
-      <button class="btn" onclick="scrollToContact()">Contact Me</button>
-      <a href="#projects" class="btn secondary-btn">View Projects</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <strong>2+</strong>
-        <span>Years Experience</span>
+  <section class="hero reveal">
+    <div class="hero-text">
+      <p>Hello, I'm</p>
+      <h1>Joni <span>Syofian</span></h1>
+      <h3>Data Engineer</h3>
+      <p>Building reliable data pipelines, analytics workflows, and business dashboards.</p>
+      <div class="hero-actions">
+        <button class="btn" onclick="scrollToContact()">Contact Me</button>
+        <a href="#projects" class="btn secondary-btn">View Projects</a>
       </div>
-      <div>
-        <strong>ETL</strong>
-        <span>Data Pipelines</span>
+      <div class="hero-stats">
+        <div>
+          <strong>2+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div>
+          <strong>ETL</strong>
+          <span>Data Pipelines</span>
+        </div>
+        <div>
+          <strong>BI</strong>
+          <span>Dashboards</span>
+        </div>
       </div>
-      <div>
-        <strong>BI</strong>
-        <span>Dashboards</span>
+      <div class="hero-socials" aria-label="Social links">
+        <a href="mailto:jonisyofian14@gmail.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://linkedin.com/in/jonisyofian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/jonisy1406" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
       </div>
     </div>
-    <div class="hero-socials" aria-label="Social links">
-      <a href="mailto:jonisyofian14@gmail.com" aria-label="Email">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-      <a href="https://linkedin.com/in/jonisyofian" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/jonisy1406" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <i class="fa-brands fa-github"></i>
-      </a>
-    </div>
-  </div>
-  <div class="data-visual" aria-label="Data engineering workflow illustration">
-    <div class="data-node node-source">
-      <i class="fa-solid fa-database"></i>
-      <span>CSV/API</span>
-    </div>
-    <div class="data-node node-etl">
-      <i class="fa-solid fa-code-branch"></i>
-      <span>ETL</span>
-    </div>
-    <div class="data-node node-model">
-      <i class="fa-solid fa-server"></i>
-      <span>PostgreSQL</span>
-    </div>
-    <div class="data-node node-dashboard">
-      <i class="fa-solid fa-chart-line"></i>
-      <span>BI Dashboard</span>
-    </div>
-    <div class="pipeline-line line-one"></div>
-    <div class="pipeline-line line-two"></div>
-    <div class="pipeline-line line-three"></div>
-    <div class="data-core">
-      <i class="fa-solid fa-server"></i>
-      <span>Data Pipeline</span>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="about reveal">
-  <img src="asset/04.jpg" alt="Joni Syofian">
-  <div class="about-text">
-    <h2>About Me</h2>
-    <p>I am a Data Engineer with nearly 2 years of professional experience as a Technical Consultant, focused on data engineering, analytics, and business intelligence.</p>
-    <p>I build end-to-end data solutions from extraction and transformation to SQL analysis, reporting, and dashboard delivery. I enjoy turning complex datasets into reliable insights that support better decisions.</p>
-
-    <div class="about-highlights">
-      <div>
-        <i class="fa-solid fa-briefcase"></i>
-        <span>Technical Consultant</span>
+    <div class="data-visual" aria-label="Data engineering workflow illustration">
+      <div class="data-node node-source">
+        <i class="fa-solid fa-database"></i>
+        <span>CSV/API</span>
       </div>
-      <div>
+      <div class="data-node node-etl">
         <i class="fa-solid fa-code-branch"></i>
-        <span>Data Engineering</span>
+        <span>ETL</span>
       </div>
-      <div>
-        <i class="fa-solid fa-chart-simple"></i>
-        <span>BI & Analytics</span>
+      <div class="data-node node-model">
+        <i class="fa-solid fa-server"></i>
+        <span>PostgreSQL</span>
+      </div>
+      <div class="data-node node-dashboard">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>BI Dashboard</span>
+      </div>
+      <div class="pipeline-line line-one"></div>
+      <div class="pipeline-line line-two"></div>
+      <div class="pipeline-line line-three"></div>
+      <div class="data-core">
+        <i class="fa-solid fa-server"></i>
+        <span>Data Pipeline</span>
       </div>
     </div>
+  </section>
 
-    <div class="tools">
-      <h3>Tools I Use</h3>
-      <div class="tools-grid">
-        <div class="tool-item reveal">
-          <i class="fa-brands fa-python"></i>
-          <span>Python</span>
+  <section id="about" class="about reveal">
+    <img src="asset/04.jpg" alt="Joni Syofian">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>I am a Data Engineer with nearly 2 years of professional experience as a Technical Consultant, focused on data
+        engineering, analytics, and business intelligence.</p>
+      <p>I build end-to-end data solutions from extraction and transformation to SQL analysis, reporting, and dashboard
+        delivery. I enjoy turning complex datasets into reliable insights that support better decisions.</p>
+
+      <div class="about-highlights">
+        <div>
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Technical Consultant</span>
         </div>
-        <div class="tool-item reveal">
-          <i class="fa-solid fa-square-root-variable"></i>
-          <span>MATLAB</span>
+        <div>
+          <i class="fa-solid fa-code-branch"></i>
+          <span>Data Engineering</span>
         </div>
-        <div class="tool-item reveal">
-          <i class="fa-solid fa-database"></i>
-          <span>SQL</span>
+        <div>
+          <i class="fa-solid fa-chart-simple"></i>
+          <span>BI & Analytics</span>
         </div>
-        <div class="tool-item reveal">
-          <i class="fa-solid fa-diagram-project"></i>
-          <span>IBM DataStage</span>
+      </div>
+
+      <div class="tools">
+        <h3>Tools I Use</h3>
+        <div class="tools-grid">
+          <div class="tool-item reveal">
+            <i class="fa-brands fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-solid fa-square-root-variable"></i>
+            <span>MATLAB</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-solid fa-database"></i>
+            <span>SQL</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>IBM DataStage</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Power BI</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Tableau</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-brands fa-microsoft"></i>
+            <span>Microsoft Office</span>
+          </div>
+          <div class="tool-item reveal">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </div>
         </div>
-        <div class="tool-item reveal">
-          <i class="fa-solid fa-chart-column"></i>
+      </div>
+
+      <a href="asset/CV_Joni%20Syofian.pdf" class="btn about-cv-btn" download>
+        <i class="fa-solid fa-file-arrow-down"></i> Download CV
+      </a>
+    </div>
+  </section>
+
+  <section id="services" class="reveal">
+    <h2>What I Do</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <i class="fa-solid fa-database"></i>
+        <h3>Data Engineering</h3>
+        <p>ETL pipelines & automation</p>
+        <div class="card-tags">
+          <span>ETL</span>
+          <span>SQL Optimization</span>
+          <span>Data Quality</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Data Analysis</h3>
+        <p>Insights & dashboards</p>
+        <div class="card-tags">
+          <span>EDA</span>
+          <span>Business Insights</span>
+          <span>Reporting</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <i class="fa-solid fa-chart-pie"></i>
+        <h3>Dashboarding</h3>
+        <p>Power BI & Tableau visualization</p>
+        <div class="card-tags">
+          <span>KPI Dashboard</span>
           <span>Power BI</span>
-        </div>
-        <div class="tool-item reveal">
-          <i class="fa-solid fa-chart-pie"></i>
           <span>Tableau</span>
         </div>
-        <div class="tool-item reveal">
-          <i class="fa-brands fa-microsoft"></i>
-          <span>Microsoft Office</span>
-        </div>
-        <div class="tool-item reveal">
-          <i class="fa-brands fa-github"></i>
-          <span>GitHub</span>
-        </div>
       </div>
     </div>
+  </section>
 
-    <a href="asset/CV_Joni%20Syofian.pdf" class="btn about-cv-btn" download>
-      <i class="fa-solid fa-file-arrow-down"></i> Download CV
-    </a>
-  </div>
-</section>
-
-<section id="services" class="reveal">
-  <h2>What I Do</h2>
-  <div class="cards">
-    <div class="card reveal">
-      <i class="fa-solid fa-database"></i>
-      <h3>Data Engineering</h3>
-      <p>ETL pipelines & automation</p>
-      <div class="card-tags">
-        <span>ETL</span>
-        <span>SQL Optimization</span>
-        <span>Data Quality</span>
-      </div>
-    </div>
-    <div class="card reveal">
-      <i class="fa-solid fa-chart-line"></i>
-      <h3>Data Analysis</h3>
-      <p>Insights & dashboards</p>
-      <div class="card-tags">
-        <span>EDA</span>
-        <span>Business Insights</span>
-        <span>Reporting</span>
-      </div>
-    </div>
-    <div class="card reveal">
-      <i class="fa-solid fa-chart-pie"></i>
-      <h3>Dashboarding</h3>
-      <p>Power BI  & Tableau visualization</p>
-      <div class="card-tags">
-        <span>KPI Dashboard</span>
-        <span>Power BI</span>
-        <span>Tableau</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="projects reveal">
+  <section id="projects" class="projects reveal">
     <h2>Projects</h2>
-    <p class="section-desc">Selected work across data engineering, BI dashboards, SQL tooling, data science, and scientific research.</p>
-        <div class="cards">
-            <a href="data-pipeline-project.html" class="card-link reveal">
-                <div class="card">
-                    <span class="project-badge">Data Engineering</span>
-                    <i class="fa-solid fa-code-branch"></i>
-                    <h3>Data Pipeline Project</h3>
-                    <p>End-to-end ETL pipeline with PostgreSQL</p>
-                    <div class="card-tags">
-                      <span>Python</span>
-                      <span>PostgreSQL</span>
-                      <span>Power BI</span>
-                    </div>
-                </div>
-            </a>
-
+    <p class="section-desc">Selected work across data engineering, BI dashboards, SQL tooling, data science, and
+      scientific research.</p>
+    <div class="cards">
+      <a href="data-pipeline-project.html" class="card-link reveal">
+        <div class="card">
+          <span class="project-badge">Data Engineering</span>
+          <i class="fa-solid fa-code-branch"></i>
+          <h3>Data Pipeline Project</h3>
+          <p>End-to-end ETL pipeline with PostgreSQL</p>
+          <div class="card-tags">
+            <span>Python</span>
+            <span>PostgreSQL</span>
+            <span>Power BI</span>
+          </div>
+        </div>
+      </a>
+      <!--
             <a href="sql-query-optimization/" class="card-link reveal">
                 <div class="card">
                     <span class="project-badge">SQL Tooling</span>
@@ -224,79 +229,80 @@
                     </div>
                 </div>
             </a>
-    
-            <a href="tableau-portfolio.html" class="card-link reveal">
-                <div class="card">
-                    <span class="project-badge">Business Intelligence</span>
-                    <i class="fa-solid fa-chart-pie"></i>
-                    <h3>Tableau Portfolio</h3>
-                    <p>Interactive dashboards on Tableau Public</p>
-                    <div class="card-tags">
-                      <span>Tableau</span>
-                      <span>Dashboard</span>
-                      <span>BI</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="data-analytics-portfolio.html" class="card-link reveal">
-                <div class="card">
-                    <span class="project-badge">Analytics & ML</span>
-                    <i class="fa-solid fa-brain"></i>
-                    <h3>Data Analytics Portfolio</h3>
-                    <p>SQL, visualization, and machine learning projects</p>
-                    <div class="card-tags">
-                      <span>SQL</span>
-                      <span>Python</span>
-                      <span>ML</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="oceanographic-research.html" class="card-link reveal">
-                <div class="card">
-                    <span class="project-badge">Scientific Research</span>
-                    <i class="fa-solid fa-water"></i>
-                    <h3>Oceanographic Research</h3>
-                    <p>Coastal water data analysis using MATLAB</p>
-                    <div class="card-tags">
-                      <span>MATLAB</span>
-                      <span>Oceanography</span>
-                      <span>ITB Press</span>
-                    </div>
-                </div>
-            </a>
+-->
+      <a href="tableau-portfolio.html" class="card-link reveal">
+        <div class="card">
+          <span class="project-badge">Business Intelligence</span>
+          <i class="fa-solid fa-chart-pie"></i>
+          <h3>Tableau Portfolio</h3>
+          <p>Interactive dashboards on Tableau Public</p>
+          <div class="card-tags">
+            <span>Tableau</span>
+            <span>Dashboard</span>
+            <span>BI</span>
+          </div>
         </div>
-</section>
+      </a>
 
-<section id="contact" class="contact reveal">
-  <h2>Get In Touch</h2>
-  <p class="contact-desc">Feel free to reach out for collaboration or opportunities</p>
+      <a href="data-analytics-portfolio.html" class="card-link reveal">
+        <div class="card">
+          <span class="project-badge">Analytics & ML</span>
+          <i class="fa-solid fa-brain"></i>
+          <h3>Data Analytics Portfolio</h3>
+          <p>SQL, visualization, and machine learning projects</p>
+          <div class="card-tags">
+            <span>SQL</span>
+            <span>Python</span>
+            <span>ML</span>
+          </div>
+        </div>
+      </a>
 
-  <div class="contact-container">
+      <a href="oceanographic-research.html" class="card-link reveal">
+        <div class="card">
+          <span class="project-badge">Scientific Research</span>
+          <i class="fa-solid fa-water"></i>
+          <h3>Oceanographic Research</h3>
+          <p>Coastal water data analysis using MATLAB</p>
+          <div class="card-tags">
+            <span>MATLAB</span>
+            <span>Oceanography</span>
+            <span>ITB Press</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
 
-    <a href="mailto:jonisyofian14@gmail.com" class="contact-card reveal">
-      <i class="fa-solid fa-envelope"></i>
-      <span>Email Me</span>
-    </a>
+  <section id="contact" class="contact reveal">
+    <h2>Get In Touch</h2>
+    <p class="contact-desc">Feel free to reach out for collaboration or opportunities</p>
 
-    <a href="https://linkedin.com/in/jonisyofian" target="_blank" class="contact-card reveal">
-      <i class="fa-brands fa-linkedin"></i>
-      <span>LinkedIn</span>
-    </a>
+    <div class="contact-container">
 
-    <a href="https://github.com/jonisy1406" target="_blank" class="contact-card reveal">
+      <a href="mailto:jonisyofian14@gmail.com" class="contact-card reveal">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email Me</span>
+      </a>
+
+      <a href="https://linkedin.com/in/jonisyofian" target="_blank" class="contact-card reveal">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+
+      <a href="https://github.com/jonisy1406" target="_blank" class="contact-card reveal">
         <i class="fa-brands fa-github"></i>
         <span>GitHub</span>
-    </a>
+      </a>
 
-  </div>
-</section>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2026 Joni Syofian</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 Joni Syofian</p>
+  </footer>
 
-<script src="script.js?v=20260428-2"></script>
+  <script src="script.js?v=20260428-2"></script>
 </body>
+
 </html>
